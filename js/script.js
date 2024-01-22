@@ -9,8 +9,9 @@
  */
 'use strict';
 
-const iterations = document.querySelector('#txtIterations').value;
-const clearPage = () => {
+let iterations;
+const initialisePage = () => {
+    iterations = document.querySelector('#txtIterations').value;
     const section = document.querySelector('main > section');
     if (section !== null) {
         section.remove(); 
@@ -20,7 +21,7 @@ const clearPage = () => {
 document.querySelector('#multiple').addEventListener('click', (e) => {
     e.preventDefault();
     
-    clearPage();
+    initialisePage();
     const startTime = Date.now();
 
     document.querySelector('main').appendChild(document.createElement('section'));
@@ -46,7 +47,7 @@ document.querySelector('#multiple').addEventListener('click', (e) => {
 document.querySelector('#single').addEventListener('click', (e) => {
     e.preventDefault();
 
-    clearPage();
+    initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -75,7 +76,7 @@ document.querySelector('#single').addEventListener('click', (e) => {
 document.querySelector('#cloneNode').addEventListener('click', (e) => {
     e.preventDefault();
 
-    clearPage();
+    initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -104,7 +105,7 @@ document.querySelector('#cloneNode').addEventListener('click', (e) => {
 document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
-    clearPage();
+    initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -131,12 +132,13 @@ document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
 document.querySelector('#innerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
-    clearPage();
+    initialisePage();
     const startTime = Date.now();
 
-    // No appends. The new elements are added as template literals
-    let section = '<section>';
+    const sectionElement = document.createElement('section');
     
+    // No appends. The new elements are added as template literals
+    let section = '';
     for (let index = 0; index < iterations; index++) {        
         section += `
             <div>
@@ -148,8 +150,9 @@ document.querySelector('#innerHTML').addEventListener('click', (e) => {
         `
     }
     section += '</section>';
-    
-    document.querySelector('main').innerHTML += section;
+    sectionElement.innerHTML = section;
+
+    document.querySelector('main').appendChild(sectionElement);
 
     console.log('Changing innerHTML with template literals takes ' + (Date.now() - startTime) + ' ms.');
 });
