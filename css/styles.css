@@ -1,0 +1,65 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400&display=swap");
+
+:root {
+    --colorPrimary: #20408A;
+    --colorTextSecondary: floralwhite;
+
+    --fontMain: 'Raleway', Arial, Helvetica, sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: var(--fontMain);
+}
+
+body > header {
+    padding: 0.5rem 0 0.5rem 2rem;
+    color: var(--colorTextSecondary);
+    background-color: var(--colorPrimary);
+}
+
+form {
+    margin: 1rem;    
+}
+form > div {
+    margin-bottom: 0.5rem;
+}
+input[type=number] {
+    text-align: right;
+}
+button {
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+}
+
+section {
+    display: flex;
+    flex-flow: row wrap;
+    margin-bottom: 2rem;
+}
+
+section > div {
+    margin: 0.5rem;
+    padding: 1rem;        
+    border: thin solid var(--colorPrimary);
+    border-radius: 0.5rem;
+}
+section > div > header {
+    margin-bottom: 0.5rem;
+    border-bottom: thin solid var(--colorPrimary);
+}
+
+div > h1 {
+    font-size: 1.2rem;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 0.25rem 0 0.25rem 0;
+    color: var(--colorTextSecondary);
+    background-color: var(--colorPrimary);
+    text-align: center;
+}
