@@ -10,6 +10,7 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
     font-family: var(--fontMain);
 }
 
@@ -21,34 +22,34 @@ body > header {
 
 form {
     margin: 1rem;    
-}
-form > div {
-    margin-bottom: 0.5rem;
-}
-input[type=number] {
-    text-align: right;
-}
-button {
-    padding: 0.25rem 0.5rem;
-    border-radius: 0.25rem;
+    > div {
+        margin-bottom: 0.5rem;
+    }
+    input[type=number] {
+        text-align: right;
+    }
+    button {
+        padding: 0.25rem 0.5rem;
+        border-radius: 0.25rem;
+    }
 }
 
 section {
     display: flex;
     flex-flow: row wrap;
     margin-bottom: 2rem;
+    > div {
+        margin: 0.5rem;
+        padding: 1rem;        
+        border: thin solid var(--colorPrimary);
+        border-radius: 0.5rem;
+        > header {
+            margin-bottom: 0.5rem;
+            border-bottom: thin solid var(--colorPrimary);
+        }
+    }
 }
 
-section > div {
-    margin: 0.5rem;
-    padding: 1rem;        
-    border: thin solid var(--colorPrimary);
-    border-radius: 0.5rem;
-}
-section > div > header {
-    margin-bottom: 0.5rem;
-    border-bottom: thin solid var(--colorPrimary);
-}
 
 div > h1 {
     font-size: 1.2rem;

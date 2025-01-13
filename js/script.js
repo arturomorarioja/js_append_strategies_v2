@@ -18,6 +18,9 @@ const initialisePage = () => {
     }
 }
 
+/**
+ * Multiple appends
+ */
 document.querySelector('#multiple').addEventListener('click', (e) => {
     e.preventDefault();
     
@@ -44,6 +47,9 @@ document.querySelector('#multiple').addEventListener('click', (e) => {
     console.log('Multiple appends takes ' + (Date.now() - startTime) + ' ms.');
 });
 
+/**
+ * Single append
+ */
 document.querySelector('#single').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -73,6 +79,9 @@ document.querySelector('#single').addEventListener('click', (e) => {
     console.log('Single append takes ' + (Date.now() - startTime) + ' ms.');
 });
 
+/**
+ * cloneNode()
+ */
 document.querySelector('#cloneNode').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -102,6 +111,9 @@ document.querySelector('#cloneNode').addEventListener('click', (e) => {
     console.log('cloneNode() takes ' + (Date.now() - startTime) + ' ms.');
 });
 
+/**
+ * cloneNode() and innerHTML
+ */
 document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -129,6 +141,9 @@ document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
     console.log('cloneNode() and innerHTML takes ' + (Date.now() - startTime) + ' ms.');
 });
 
+/**
+ * innerHTML
+ */
 document.querySelector('#innerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
