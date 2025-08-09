@@ -1,7 +1,7 @@
 /**
  * JavaScript performance example: multiple appends on the page vs. one single append on the page
  * 
- * @author  Arturo Mora-Rioja (amri@kea.dk)
+ * @author  Arturo Mora-Rioja
  * @version 1.0.0, December 2022
  * @version 1.1.0, June 2023. Adding a template literal to innerHTML added
  * @version 2.0.0, January 2024. The element list is substituted by an element card list with styling
