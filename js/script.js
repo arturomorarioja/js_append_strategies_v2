@@ -6,16 +6,15 @@
  * @version 1.1.0, June 2023. Adding a template literal to innerHTML added
  * @version 2.0.0, January 2024. The element list is substituted by an element card list with styling
  *                               A combination of cloneNode() and innerHTML is added
+ * @version 2.0.1, September 2025. Refactoring
  */
-'use strict';
 
-let iterations;
 const initialisePage = () => {
-    iterations = document.querySelector('#txtIterations').value;
     const section = document.querySelector('main > section');
     if (section !== null) {
         section.remove(); 
     }
+    return parseInt(document.querySelector('#txtIterations').value);
 }
 
 /**
@@ -24,7 +23,7 @@ const initialisePage = () => {
 document.querySelector('#multiple').addEventListener('click', (e) => {
     e.preventDefault();
     
-    initialisePage();
+    const iterations = initialisePage();
     const startTime = Date.now();
 
     document.querySelector('main').appendChild(document.createElement('section'));
@@ -53,7 +52,7 @@ document.querySelector('#multiple').addEventListener('click', (e) => {
 document.querySelector('#single').addEventListener('click', (e) => {
     e.preventDefault();
 
-    initialisePage();
+    const iterations = initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -85,7 +84,7 @@ document.querySelector('#single').addEventListener('click', (e) => {
 document.querySelector('#cloneNode').addEventListener('click', (e) => {
     e.preventDefault();
 
-    initialisePage();
+    const iterations = initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -117,7 +116,7 @@ document.querySelector('#cloneNode').addEventListener('click', (e) => {
 document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
-    initialisePage();
+    const iterations = initialisePage();
     const startTime = Date.now();
 
     const section = document.createElement('section');
@@ -147,7 +146,7 @@ document.querySelector('#cloneNodeinnerHTML').addEventListener('click', (e) => {
 document.querySelector('#innerHTML').addEventListener('click', (e) => {
     e.preventDefault();
 
-    initialisePage();
+    const iterations = initialisePage();
     const startTime = Date.now();
 
     const sectionElement = document.createElement('section');
